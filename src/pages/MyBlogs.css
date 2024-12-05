@@ -1,0 +1,120 @@
+/* Container for the MyBlogs component */
+.my-blogs {
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Set default font size for the whole page */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header for the blogs page */
+  .my-blogs h1 {
+    font-size: 1.8rem; /* Adjusted for consistency */
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Error message styling */
+  .my-blogs p {
+    font-size: 1rem; /* Consistent font size for all paragraphs */
+    color: #d9534f; /* Bootstrap red */
+    text-align: center;
+  }
+  
+  /* No blogs message */
+  .my-blogs p {
+    font-size: 1rem; /* Consistent font size for all paragraphs */
+    color: #5bc0de; /* Bootstrap info color */
+    text-align: center;
+  }
+  
+  /* Each blog card is like a table */
+  .blog-card {
+    display: table; /* Display as a table */
+    width: 100%; /* Full width */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover effect for blog card */
+  .blog-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+  }
+  
+  /* Row for the blog card content */
+  .blog-card .blog-row {
+    display: table-row; /* Display as table row */
+  }
+  
+  /* Each "cell" in the row */
+  .blog-card .blog-cell {
+    display: table-cell; /* Display as table cell */
+    padding: 10px;
+    vertical-align: middle; /* Center the content vertically */
+  }
+  
+  /* Image styling (passport size) */
+  .blog-card img {
+    width: 100px; /* Passport size width */
+    height: 100px; /* Passport size height */
+    border-radius: 8px;
+    object-fit: cover; /* Ensures image fits well */
+    margin-right: 20px; /* Space between image and title */
+  }
+  
+  /* Title styling */
+  .blog-card h2 {
+    font-size: 1rem; /* Unified font size for title */
+    color: #333;
+    margin-bottom: 15px;
+    flex: 1;
+    text-align: left;
+  }
+  
+  /* Action buttons (Edit/Delete) */
+  .blog-actions {
+    display: block;
+    gap: 10px;
+  }
+  
+  .blog-actions button {
+    padding: 10px 15px;
+    font-size: 1rem; /* Unified font size for buttons */
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .blog-actions button:hover {
+    opacity: 0.8;
+  }
+  
+  .blog-actions button:focus {
+    outline: none;
+  }
+  
+  .blog-actions button:first-child {
+    background-color: #0275d8; /* Edit button */
+    color: white;
+  }
+  
+  .blog-actions button:first-child:hover {
+    background-color: #025aa5;
+  }
+  
+  .blog-actions button:last-child {
+    background-color: #d9534f; /* Delete button */
+    color: white;
+  }
+  
+  .blog-actions button:last-child:hover {
+    background-color: #c9302c;
+  }
+  

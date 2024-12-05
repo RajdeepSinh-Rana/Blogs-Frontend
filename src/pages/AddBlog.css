@@ -1,0 +1,128 @@
+/* AddBlog.css */
+
+/* General Layout */
+.add-blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  
+  .add-blog-box {
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-blog-box h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .add-blog-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #0066cc;
+    outline: none;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0066cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .submit-btn:not(:disabled):hover {
+    background-color: #005bb5;
+  }
+  
+  .success-message {
+    text-align: center;
+    background-color: #e6f7e6;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-message h3 {
+    font-size: 18px;
+    color: #2e7d32;
+    margin: 0;
+  }
+  
+  .add-blog-container .add-blog-box,
+  .add-blog-container .success-message {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .add-blog-box {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add-blog-box h2 {
+      font-size: 20px;
+    }
+  
+    .submit-btn {
+      padding: 10px 15px;
+    }
+  }
+  

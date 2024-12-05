@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
@@ -22,8 +22,8 @@ function Home() {
     <div className="home-container">
       <h1>Latest Stories</h1>
       {blogs.map((blog) => (
-        <Link to={`/blog/${blog._id}`} key={blog._id} className="blog-link">
-          <div className="blog">
+        <Fragment key={blog.i_id}>
+        <div className="blog">
             {blog.image && (
               <img src={blog.image} alt={blog.title} className="blog-image" />
             )}
@@ -35,9 +35,13 @@ function Home() {
                 <span>{new Date(blog.createdTime).toLocaleDateString()}</span>
               </div>
               <p className="blog-description">{blog.description}</p>
+              
             </div>
+            <Link to={`/blog/${blog._id}`} key={blog._id} className="blog-link">
+            Read More...
+           </Link>
           </div>
-        </Link>
+        </Fragment>
       ))}
     </div>
   );

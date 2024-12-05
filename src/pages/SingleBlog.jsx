@@ -11,7 +11,7 @@ function SingleBlog() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await axios.get(`https://backend-blog-p9a1.onrender.com//Blog/single/${id}`);
+        const response = await axios.get(`https://backend-blog-p9a1.onrender.com/Blog/single/${id}`);
         setBlog(response.data.singleBlog);
       } catch (error) {
         console.error("Error fetching blog:", error);

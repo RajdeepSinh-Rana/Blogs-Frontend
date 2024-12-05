@@ -8,7 +8,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("https://backend-blog-p9a1.onrender.com//Blog/All")
+      .get("https://backend-blog-p9a1.onrender.com/Blog/All")
       .then((response) => {
         console.log(response);
         setBlogs(response.data.blogs);

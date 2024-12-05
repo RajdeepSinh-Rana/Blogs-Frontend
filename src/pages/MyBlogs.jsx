@@ -9,7 +9,7 @@ function MyBlogs() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch(`https://backend-blog-p9a1.onrender.com//Blog/GetMine`, {
+    fetch(`https://backend-blog-p9a1.onrender.com/Blog/GetMine`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

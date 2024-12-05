@@ -16,7 +16,7 @@ function ResetPassword() {
     setLoading(true);
     setErrorMessage(""); // Clear any previous error messages
     try {
-      const response = await axios.post("https://backend-blog-p9a1.onrender.com//User/ForgotPassword", { email: formData.email });
+      const response = await axios.post("https://backend-blog-p9a1.onrender.com/User/ForgotPassword", { email: formData.email });
       alert(response.data.msg); // Show OTP sent success message
       setStep(2); // Move to Step 2
     } catch (error) {

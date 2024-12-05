@@ -16,7 +16,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://backend-blog-p9a1.onrender.com//User/Login", formData);
+      const response = await axios.post("https://backend-blog-p9a1.onrender.com/User/Login", formData);
       localStorage.setItem("token", response.data.token);
       alert("Login successful!");
       navigate("/");

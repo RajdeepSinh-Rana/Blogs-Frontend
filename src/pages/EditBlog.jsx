@@ -20,7 +20,7 @@ function EditBlog() {
     const fetchBlog = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await fetch(`https://backend-blog-p9a1.onrender.com//Blog/EditGet/${id}`, {
+        const response = await fetch(`https://backend-blog-p9a1.onrender.com/Blog/EditGet/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",

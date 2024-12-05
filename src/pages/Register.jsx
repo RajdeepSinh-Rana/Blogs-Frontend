@@ -34,7 +34,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://backend-blog-p9a1.onrender.com//User/Ragister", formData);
+      await axios.post("https://backend-blog-p9a1.onrender.com/User/Ragister", formData);
       alert("Registration successful! Please login.");
       navigate("/login");
     } catch (error) {

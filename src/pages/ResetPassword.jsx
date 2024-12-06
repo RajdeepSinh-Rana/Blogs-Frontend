@@ -33,7 +33,7 @@ function ResetPassword() {
     setLoading(true); // Start loading
     setErrorMessage(""); // Clear previous error message
     try {
-      const response = await axios.post("https://backend-blog-p9a1.onrender.com//User/Resetpassword", {
+      const response = await axios.post("https://backend-blog-p9a1.onrender.com/User/Resetpassword", {
         email: formData.email,
         otp: formData.otp,
         newpassword: formData.newpassword,

@@ -38,7 +38,7 @@ function Home() {
               <p className="blog-description">{blog.description}</p>
               
             </div>
-            Read More...
+
           </div>
            </Link>
         </Fragment>

@@ -53,7 +53,7 @@ function EditBlog() {
     }
 
     try {
-      const response = await fetch(`https://backend-blog-p9a1.onrender.com//Blog/EditBlog`, {
+      const response = await fetch(`https://backend-blog-p9a1.onrender.com/Blog/EditBlog`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -162,18 +162,7 @@ function EditBlog() {
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="status">Status</label>
-          <select
-            id="status"
-            name="status"
-            value={blog.status}
-            onChange={handleChange}
-          >
-            <option value="draft">Draft</option>
-            <option value="published">Published</option>
-          </select>
-        </div>
+      
 
         <button type="submit" className="submit-btn">
           Update Blog

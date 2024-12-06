@@ -34,7 +34,7 @@ function MyBlogs() {
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch(`https://backend-blog-p9a1.onrender.com//Blog/Delete`, {
+      const res = await fetch(`https://backend-blog-p9a1.onrender.com/Blog/Delete`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

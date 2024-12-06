@@ -32,7 +32,10 @@ function EditBlog() {
         }
 
         const data = await response.json();
-        setBlog(data.blog);
+        setBlog({
+          ...data.blog,
+          tags: Array.isArray(data.blog.tags) ? data.blog.tags.join(", ") : data.blog.tags,
+        });
       } catch (error) {
         console.error("Error fetching blog data:", error);
         setError("An error occurred while fetching the blog. Please try again.");
@@ -60,7 +63,9 @@ function EditBlog() {
         },
         body: JSON.stringify({
           ...blog,
-          tags: blog.tags.split(",").map((tag) => tag.trim()),
+          tags: blog.tags 
+            ? (typeof blog.tags === "string" ? blog.tags.split(",").map((tag) => tag.trim()) : blog.tags)
+            : [],
           id,
         }),
       });
@@ -160,8 +165,6 @@ function EditBlog() {
             onChange={handleChange}
           />
         </div>
-
-      
 
         <button type="submit" className="submit-btn">
           Update Blog

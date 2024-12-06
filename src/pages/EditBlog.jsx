@@ -9,8 +9,7 @@ function EditBlog() {
     image: "",
     content: "",
     tags: "",
-    category: "",
-    status: "draft",
+    category: ""
   });
   const [error, setError] = useState("");
   const { id } = useParams();

@@ -1,6 +1,5 @@
 import  { useEffect, useState } from "react";
 import axios from "axios";
-// import BlogCard from "../components/BlogCard";
 
 function AllBlogs() {
   const [blogs, setBlogs] = useState([]);

@@ -8,7 +8,6 @@ function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
-  // Animate the login form when the component mounts
   useEffect(() => {
     gsap.to(".login", { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: "power2.out" });
   }, []);
@@ -45,7 +44,6 @@ function Login() {
       />
       <button type="submit">Login</button>
       
-      {/* Forgot Password Button */}
       <button 
         type="button" 
         className="forgot-password-btn" 

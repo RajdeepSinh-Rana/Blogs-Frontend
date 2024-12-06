@@ -31,7 +31,6 @@ function MyBlogs() {
       });
   }, []);
 
-  // Handle delete action
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
     try {
@@ -47,7 +46,7 @@ function MyBlogs() {
       const data = await res.json();
       if (res.ok) {
         alert("Blog deleted successfully.");
-        setBlogs(blogs.filter((blog) => blog._id !== id)); // Remove the blog from the list
+        setBlogs(blogs.filter((blog) => blog._id !== id)); 
       } else {
         alert(data.msg || "Failed to delete the blog.");
       }
@@ -57,9 +56,8 @@ function MyBlogs() {
     }
   };
 
-  // Handle edit action using useNavigate
   const handleEdit = (id) => {
-    navigate(`/EditBlog/${id}`);  // Use navigate to go to the edit page
+    navigate(`/EditBlog/${id}`); 
   };
 
   return (
@@ -72,19 +70,15 @@ function MyBlogs() {
       ) : (
         blogs.map((blog) => (
           <div key={blog._id} className="blog-card">
-            {/* Each blog card is a table */}
             <div className="blog-row">
-              {/* First cell: Image */}
               <div className="blog-cell">
                 {blog.image && <img src={blog.image} alt={blog.title} />}
               </div>
 
-              {/* Second cell: Title */}
               <div className="blog-cell">
                 <h2>{blog.title}</h2>
               </div>
 
-              {/* Third cell: Actions (Edit/Delete buttons) */}
               <div className="blog-cell">
                 <div className="blog-actions">
                   <button onClick={() => handleEdit(blog._id)}>Edit</button>

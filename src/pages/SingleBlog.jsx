@@ -4,9 +4,9 @@ import axios from "axios";
 import "./SingleBlog.css";
 
 function SingleBlog() {
-  const { id } = useParams(); // Get the blog ID from the URL
-  const [blog, setBlog] = useState(null); // State to store the blog data
-  const [loading, setLoading] = useState(true); // Loading state
+  const { id } = useParams(); 
+  const [blog, setBlog] = useState(null); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchBlog = async () => {
@@ -24,11 +24,11 @@ function SingleBlog() {
   }, [id]);
 
   if (loading) {
-    return <p>Loading...</p>; // Show loading state
+    return <p>Loading...</p>; 
   }
 
   if (!blog) {
-    return <p>Blog not found.</p>; // Handle case where no blog is returned
+    return <p>Blog not found.</p>;
   }
 
   return (
@@ -38,7 +38,6 @@ function SingleBlog() {
       <div className="blog-meta">
         <p><strong>Author:</strong>  {blog.userId?.name || "Anonymous"}</p>
         <p><strong>Created:</strong> {new Date(blog.createdTime).toLocaleDateString()}</p>
-        {/* <p><strong>Updated:</strong> {new Date(blog.updatedTime).toLocaleDateString()}</p> */}
       </div>
       <p><strong>Description:</strong> {blog.description}</p>
       <p><strong>Content:</strong> {blog.content || "No content available"}</p>

@@ -61,7 +61,7 @@ function EditBlog() {
         },
         body: JSON.stringify({
           ...blog,
-          tags: blog.tags.split(",").map((tag) => tag.trim()), // Ensure tags are array
+          tags: blog.tags.split(",").map((tag) => tag.trim()),
           id,
         }),
       });

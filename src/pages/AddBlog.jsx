@@ -38,7 +38,7 @@ function AddBlog() {
         },
         body: JSON.stringify({
           ...formData,
-          tags: formData.tags.split(",").map((tag) => tag.trim()), // Convert tags to array
+          tags: formData.tags.split(",").map((tag) => tag.trim()), 
         }),
       });
 

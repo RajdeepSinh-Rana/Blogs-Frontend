@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import  { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-// Lazy load the components
 const Home = lazy(() => import("./pages/Home"));
 const AddBlog = lazy(() => import("./pages/AddBlog"));
 const AllBlogs = lazy(() => import("./pages/AllBlogs"));

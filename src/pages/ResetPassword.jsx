@@ -1,50 +1,48 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./ResetPassword.css"; // Importing CSS for styling
+import "./ResetPassword.css"; 
 
 function ResetPassword() {
   const [formData, setFormData] = useState({ email: "", otp: "", newpassword: "" });
-  const [step, setStep] = useState(1); // Step 1: Enter Email, Step 2: Enter OTP and New Password
-  const [loading, setLoading] = useState(false); // Track loading state
-  const [errorMessage, setErrorMessage] = useState(""); // To store error messages
-  const navigate = useNavigate(); // Navigate for redirection after success
+  const [step, setStep] = useState(1); 
+  const [loading, setLoading] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate(); 
 
-  // Step 1: Handle sending OTP to email
   const handleEmailSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setErrorMessage(""); // Clear any previous error messages
+    setErrorMessage(""); 
     try {
       const response = await axios.post("https://backend-blog-p9a1.onrender.com/User/ForgotPassword", { email: formData.email });
-      alert(response.data.msg); // Show OTP sent success message
-      setStep(2); // Move to Step 2
+      alert(response.data.msg); 
+      setStep(2);
     } catch (error) {
       console.error(error);
       alert("Error sending OTP. Please try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
 
-  // Step 2: Handle resetting the password
   const handleResetSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading
-    setErrorMessage(""); // Clear previous error message
+    setLoading(true); 
+    setErrorMessage(""); 
     try {
       const response = await axios.post("https://backend-blog-p9a1.onrender.com/User/Resetpassword", {
         email: formData.email,
         otp: formData.otp,
         newpassword: formData.newpassword,
       });
-      alert(response.data.message); // Show success message
-      navigate("/login"); // Redirect to login after successful reset
+      alert(response.data.message); 
+      navigate("/login"); 
     } catch (error) {
       console.error(error);
       setErrorMessage(error.response?.data?.message || "Error resetting password. Please check your details and try again.");
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
 
@@ -96,7 +94,7 @@ function ResetPassword() {
             <button type="submit" className="submit-btn" disabled={loading}>
               {loading ? "Resetting..." : "Reset Password"}
             </button>
-            {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Display error message */}
+            {errorMessage && <p className="error-message">{errorMessage}</p>} 
           </form>
         )}
       </div>

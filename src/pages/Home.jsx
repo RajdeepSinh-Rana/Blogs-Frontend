@@ -23,6 +23,7 @@ function Home() {
       <h1>Latest Stories</h1>
       {blogs.map((blog) => (
         <Fragment key={blog.i_id}>
+          <Link to={`/blog/${blog._id}`} key={blog._id} style={{ textDecoration: 'none' }}>
         <div className="blog">
             {blog.image && (
               <img src={blog.image} alt={blog.title} className="blog-image" />
@@ -37,10 +38,9 @@ function Home() {
               <p className="blog-description">{blog.description}</p>
               
             </div>
-            <Link to={`/blog/${blog._id}`} key={blog._id} className="blog-link">
             Read More...
-           </Link>
           </div>
+           </Link>
         </Fragment>
       ))}
     </div>

@@ -37,7 +37,7 @@ function Home() {
               <p className="blog-description">{blog.description}</p>
               
             </div>
-            <Link to={`/blog/${blog._id}`} key={blog._id} className="blog-link">
+            <Link to={`/blog/${blog._id}`} key={blog._id} className="blog-link" style={{ textDecoration: 'none' }}>
             Read More...
            </Link>
           </div>
